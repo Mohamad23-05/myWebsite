@@ -1,9 +1,22 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import timeline from "../data/timeline";
+import Timelinepath from "./Timelinepath";
 
 function Timeline(){
     return(
-        <div className="flex justify-center items-center mt-3 bg-stone-500 text-red-500"> Do the Timeline </div>
+        <div className="flex flex-col md:flex-row justify-center my-20">
+
+            <div className="w-full md:w-7/12">
+
+                {timeline.map(path => (
+                    <Timelinepath
+                    year={path.year}
+                    title={path.title}
+                    discription={path.discription}
+                    />
+                ))}
+            </div>
+        </div>
     )
 }
 
